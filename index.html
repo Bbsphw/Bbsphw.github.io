@@ -1,0 +1,592 @@
+<!-- sophonwit thapseng 6530300601 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sophonwit Thapseng - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: white;
+      margin: 0 auto;
+    }
+
+    .resume {
+      display: flex;
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .sidebar {
+      background: linear-gradient(180deg, #000000 0%, #262626 100%);
+      color: white;
+      width: 35%;
+      padding: 40px 30px;
+      position: relative;
+      
+    }
+
+    .sidebar a {
+    color: #FFD700;
+    text-decoration: underline;
+    }
+
+  .sidebar a:hover {
+    color: #FFA500;
+    opacity: 0.8;
+  }
+
+
+    .profile {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid white;
+      background: linear-gradient(135deg, #87CEEB 0%, #87CEEB 40%, #9ACD32 60%, #9ACD32 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      width: 40px;
+      height: 25px;
+      /* background: white; */
+      border-radius: 50px;
+      opacity: 0.8;
+    }
+
+    .profile-image::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 40px;
+      width: 30px;
+      height: 20px;
+      /* background: white; */
+      border-radius: 50px;
+      opacity: 0.6;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .role {
+      font-size: 14px;
+      opacity: 0.9;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .sidebar section {
+      margin-bottom: 35px;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .sidebar h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: white;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+    }
+
+    .skills-category {
+      margin-bottom: 25px;
+    }
+
+    .skills-category h3 {
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .skill-subcategory {
+      margin-bottom: 12px;
+    }
+
+    .skill-subcategory-title {
+      font-size: 12px;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    .skill-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .skill-icon {
+      width: 35px;
+      height: 35px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .skill-icon:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .skill-icon::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .skill-icon:hover::after {
+      opacity: 1;
+    }
+
+    .language-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .language-level {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .hobbies-list {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .hobbies-list li {
+      margin-bottom: 6px;
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .hobbies-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px 40px;
+    }
+
+    .main-content section {
+      margin-bottom: 35px;
+    }
+
+    .main-content h2 {
+      font-size: 18px;
+      color: #262626;
+      margin-bottom: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .main-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #262626;
+    }
+
+    .career-objective {
+      font-size: 13px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .education-item, .project-item, .award-item {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .education-item:last-child, .project-item:last-child, .award-item:last-child {
+      border-bottom: none;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .item-title {
+      font-size: 15px;
+      color: #262626;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .item-date {
+      font-size: 12px;
+      color: #666;
+      font-weight: 500;
+      margin-left: 15px;
+    }
+
+    .item-subtitle {
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .item-description {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .tech-stack {
+      color: #262626;
+      font-weight: 600;
+    }
+
+    .role-title {
+      color: #262626;
+      font-weight: 600;
+    }
+
+    .award-item ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    .award-item li {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .resume {
+        box-shadow: none;
+        margin: 0;
+        width: 210mm;
+        height: 297mm;
+      }
+      
+      .skill-icon::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="profile-image">
+            <img src="https://i.postimg.cc/L6506GQw/Profile-Sophonwit.avif" alt="Profile Sophonwit Picture" width="150" height="150">
+        </div>
+        <h1 class="name">SOPHONWIT<br>THAPSENG</h1>
+        <p class="role">Computer Engineering<br>and Informatics</p>
+      </div>
+
+      <section class="contact">
+        <h2>CONTACT</h2>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <span>Khlong Toei District, Bangkok 10110</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <span>061-028-0187</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+            <span>
+                <a href="mailto:sophonwit.ts@gmail.com">sophonwit.ts@gmail.com</a>
+            </span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💻</div>
+          <span>
+            <a href="https://github.com/Bbsphw">GitHub: Bbsphw_</a>
+        </span>
+        </div>
+        <!-- <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <span>Portfolio: Bbsphw.com</span>
+        </div> -->
+      </section>
+
+      <section class="skills">
+        <h2>SKILLS</h2>
+        
+        <div class="skills-category">
+          <h3>Hard Skill (Technical Skills)</h3>
+          
+          <div class="skill-subcategory">
+            <div class="skill-subcategory-title">
+                <p>Programming Languages</p>
+            </div>
+            <div class="skill-icons">
+              <div class="skill-icon" data-tooltip="C/C++">🔧</div>
+              <div class="skill-icon" data-tooltip="Java">☕</div>
+              <div class="skill-icon" data-tooltip="HTML5">🌐</div>
+              <div class="skill-icon" data-tooltip="CSS3">🎨</div>
+              <div class="skill-icon" data-tooltip="JavaScript">⚡</div>
+              <div class="skill-icon" data-tooltip="TypeScript">📝</div>
+              <div class="skill-icon" data-tooltip="SQL">🗃️</div>
+            </div>
+          </div>
+
+          <div class="skill-subcategory">
+            <div class="skill-subcategory-title">
+                <p>Frameworks & Libraries</p>
+            </div>
+            <div class="skill-icons">
+              <div class="skill-icon" data-tooltip="React">⚛️</div>
+              <div class="skill-icon" data-tooltip="Next.js">▲</div>
+              <div class="skill-icon" data-tooltip="Node.js">🟢</div>
+              <div class="skill-icon" data-tooltip="Express.js">🚀</div>
+              <div class="skill-icon" data-tooltip="Tailwind CSS">💨</div>
+            </div>
+          </div>
+
+          <div class="skill-subcategory">
+            <div class="skill-subcategory-title">
+                <p>Databases</p>
+            </div>
+            <div class="skill-icons">
+              <div class="skill-icon" data-tooltip="MySQL">🐬</div>
+              <div class="skill-icon" data-tooltip="PostgreSQL">🐘</div>
+              <div class="skill-icon" data-tooltip="MongoDB">🍃</div>
+              <div class="skill-icon" data-tooltip="Firebase">🔥</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Soft Skill</h3>
+          <div class="skill-icons">
+            <div class="skill-icon" data-tooltip="Leadership">👑</div>
+            <div class="skill-icon" data-tooltip="Problem-Solving">🧠</div>
+            <div class="skill-icon" data-tooltip="Teamwork">🤝</div>
+            <div class="skill-icon" data-tooltip="Time Management">⏰</div>
+            <div class="skill-icon" data-tooltip="Adaptability">🔄</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="language">
+        <h2>LANGUAGE</h2>
+        <div class="language-item">
+          <span>Thai</span>
+          <span class="language-level">Native</span>
+        </div>
+        <div class="language-item">
+          <span>English</span>
+          <span class="language-level">Good</span>
+        </div>
+      </section>
+
+      <section class="hobbies">
+        <h2>HOBBIES</h2>
+        <ul class="hobbies-list">
+          <li>Reading</li>
+          <li>Solving puzzles</li>
+          <li>Technology exploration</li>
+          <li>Physical activities</li>
+          <li>Listening to music</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <section>
+        <h2>CAREER OBJECTIVE</h2>
+        <p class="career-objective">
+            I'm a final-year student in Computer and Information Engineering with a strong passion for software and web development. 
+            I have a solid foundation in JavaScript, React, and Node.js, and I truly enjoy creating user-focused and maintainable applications. 
+            I'm eager to apply my skills to real-world projects where I can contribute to building efficient and scalable solutions that make a difference.
+        </p>
+      </section>
+
+      <section>
+        <h2>EDUCATION</h2>
+        <div class="education-item">
+          <div class="item-header">
+            <div class="item-title">
+                <p>Prakanongpittayalai High School</p>
+            </div>
+            <div class="item-date">
+                <p>2019 - 2022</p>
+            </div>
+          </div>
+          <div class="item-description">
+            <p>• Science-Mathematics Program</p>
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="item-header">
+            <div class="item-title">
+                <p>Kasetsart University Sriracha Campus</p>
+            </div>
+            <div class="item-date">
+                <p>2022 - Present</p>
+            </div>
+          </div>
+          <div class="item-subtitle">
+            <p>Bachelor of Engineering in Computer Engineering and Informatics</p>
+          </div>
+          <div class="item-description">
+            <p>• Relevant coursework: Software Engineering, Computer Vision</p>
+          </div>
+          <!-- <div class="item-description">• Current GPA: 3.25/4.00 (if you want to include this)</div> -->
+        </div>
+      </section>
+
+      <section>
+        <h2>PROJECT EXPERIENCE</h2>
+        <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">
+                <p>Admin Dashboard for Tiaw Pao (เที่ยวเปล่า?)</p>
+            </div>
+            <div class="item-date">
+                <p>2022 — 2023</p>
+            </div>
+          </div>
+          <div class="item-description"><span class="tech-stack">Tech:</span> Next.js, TypeScript, Tailwind CSS, ShadCN UI, React Hook Form, Zustand, Chart.js</div>
+          <div class="item-description"><span class="role-title">Role:</span> Web Frontend Developer</div>
+          <div class="item-description"><span class="role-title">Description:</span> Developed the web-based admin dashboard for Tiaw Pao (เที่ยวเปล่า?), a mobile travel planner application. Designed key pages such as Home, Admin Login, Dashboard Overview, User Management, and User Analysis to manage user activity, analyze travel plan data, support business decisions through interactive charts and filters, and analyze trends to guide marketing efforts.</div>
+        </div>
+        <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">Personal Portfolio Website</div>
+            <div class="item-date">2024 - 2025</div>
+          </div>
+          <div class="item-description"><span class="tech-stack">Tech:</span> Next.js, NestJS, PostgreSQL, Docker, Microsoft Azure, GitHub Actions</div>
+          <div class="item-description"><span class="role-title">Role:</span> Full-Stack Developer</div>
+          <div class="item-description"><span class="role-title">Description:</span> Built and deployed a personal portfolio website using Next.js, Tailwind CSS, and TypeScript. Developed reusable components, integrated smooth animations, and optimized for performance and SEO. Implemented routing and responsive layouts, and hosted the website via Vercel to serve as a professional online presence.</div>
+        </div>
+        <!-- <div class="project-item">
+          <div class="item-header">
+            <div class="item-title">E-commerce Web Application</div>
+            <div class="item-date">2023</div>
+          </div>
+          <div class="item-description"><span class="tech-stack">Tech:</span> React, Node.js, Express.js, MongoDB, JWT Authentication</div>
+          <div class="item-description"><span class="role-title">Role:</span> Full-Stack Developer</div>
+          <div class="item-description"><span class="role-title">Description:</span> Developed a complete e-commerce solution with user authentication, product catalog, shopping cart, and payment integration. Implemented RESTful APIs, database design, and responsive UI components.</div>
+        </div> -->
+      </section>
+
+      <section>
+        <h2>CERTIFICATIONS &amp; AWARDS</h2>
+        <div class="award-item">
+          <div class="item-header">
+            <div class="item-title">
+                <p>Silver Medal, TESA Top Gun Rally 2024</p>
+            </div>
+            <div class="item-date">
+                <p>Nov 2024</p>
+            </div>
+          </div>
+          <div class="item-subtitle">
+            <p>Kasetsart University Sriracha Campus</p>
+        </div>
+          <ul>
+            <li>Developed an Acoustic and AI-Based Predictive Maintenance system on Raspberry Pi 5 for Edge Computing.</li>
+            <li>Responsible for hardware programming and sensor integration for real-time anomaly detection.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
